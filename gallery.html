@@ -12,19 +12,42 @@
 </head>
 
 <body class="media-page">
-  <div class="media-header">
-    <a class="mini-brand" href="index.html" aria-label="Home">VI<span> / LEONIDA</span></a>
-    <button class="media-menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="media-nav">
-        <a href="index.html">HOME</a>
-      <a href="only-in-leonida.html">ONLY IN LEONIDA</a>
-      <a href="music.html">MUSIC</a>
-      <a href="gallery.html">GALLERY</a>
-    </nav>
-  </div>
+  <header class="leonida-header">
+    <div class="header-bar">
+      <div class="header-left">
+        <a href="index.html" class="logo" aria-label="Grand Theft Auto VI Home">
+          <svg fill="none" height="100%" width="100%" viewBox="0 0 46 35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path d="M46.2661 0.800781H34.7236V34.4008H46.2661V0.800781Z" fill="currentColor"></path>
+            <path d="M33.9162 0.800781L17.3358 34.4008L0.776855 0.800781H12.3139L17.3332 11.5445L22.3766 0.800781H33.9162Z" fill="currentColor"></path>
+            <path d="M46.9194 1.43945C47.0056 1.43945 47.0488 1.47492 47.0488 1.54585C47.0488 1.60496 47.0155 1.63872 46.9489 1.64712L47.0573 1.81154H46.9939L46.8905 1.65148H46.828V1.81154H46.769V1.43945H46.9192H46.9194ZM46.8959 1.60465C46.9317 1.60465 46.9565 1.59999 46.9698 1.59065C46.9831 1.58132 46.9898 1.56561 46.9898 1.54336C46.9898 1.50541 46.9631 1.48628 46.9099 1.48628H46.8282V1.60465H46.8959Z" fill="currentColor"></path>
+            <path d="M46.8961 1.94775C46.7154 1.94775 46.5684 1.80355 46.5684 1.62622C46.5684 1.44889 46.7154 1.30469 46.8961 1.30469C47.0769 1.30469 47.2239 1.44889 47.2239 1.62622C47.2239 1.80355 47.0769 1.94775 46.8961 1.94775ZM46.8961 1.35509C46.7437 1.35509 46.6196 1.47673 46.6196 1.62638C46.6196 1.77602 46.7436 1.89767 46.8961 1.89767C47.0487 1.89767 47.1727 1.77602 47.1727 1.62638C47.1727 1.47673 47.0487 1.35509 46.8961 1.35509Z" fill="currentColor"></path>
+          </svg>
+        </a>
+        <div class="breadcrumb-pill">
+          <a href="index.html">Homepage</a>
+          <span class="divider">/</span>
+          <span class="current">Gallery</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="order-button header-cta" type="button">Pre-Order Now</button>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+        </label>
+        
+        <!-- Full-screen Navigation Overlay -->
+        <nav class="menu-overlay">
+          <a href="index.html">HOME</a>
+          <a href="only-in-leonida.html">ONLY IN LEONIDA</a>
+          <a href="music.html">MUSIC</a>
+          <a href="gallery.html" class="active-link">GALLERY</a>
+        </nav>
+      </div>
+    </div>
+    </header>
   
   <div id="top">
     <div class="media-hero gallery-hero">
@@ -104,17 +127,80 @@
       </div>
     </div>
   </div>
-</body>
-<script>
-  const menuToggle = document.querySelector('.media-menu-toggle');
-  const mediaNav = document.querySelector('.media-nav');
 
-  if (menuToggle && mediaNav) {
-    menuToggle.addEventListener('click', () => {
-      mediaNav.classList.toggle('open');
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-</script>
+  <footer class="site-footer">
+  
+  <!-- Centered GTA VI Logo -->
+  <img class="footer-logo" src="gta6-logo.png" alt="Grand Theft Auto VI">
+
+  <!-- Newsletter Pill Bar -->
+  <div class="newsletter-bar">
+    <div class="newsletter-left">
+      <img src="rockstar.png" alt="Rockstar Games" class="rockstar-logo-img">
+      <span class="newsletter-title">GET ROCKSTAR PROPAGANDA</span>
+    </div>
+    <div class="newsletter-right">
+      <p>Get the latest game announcements, updates on special events and offers, and much more from Rockstar Games.</p>
+    </div>
+  </div>
+
+  <div class="footer-socials">
+  <!-- X (Twitter) -->
+  <a href="#" aria-label="X">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+  </a>
+  
+  <!-- Instagram -->
+  <a href="#" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+  </a>
+  
+  <!-- YouTube -->
+  <a href="#" aria-label="YouTube">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .501 6.186C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+  </a>
+  
+  <!-- TikTok -->
+  <a href="#" aria-label="TikTok">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+  </a>
+  
+  <!-- Facebook -->
+  <a href="#" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+  
+  <!-- Twitch -->
+  <a href="#" aria-label="Twitch">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+  </a>
+  
+  <!-- Discord -->
+  <a href="#" aria-label="Discord">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+  </a>
+</div>
+
+  <!-- Legal Links -->
+  <div class="footer-links">
+    <a href="#">Corporate</a>
+    <a href="#">Privacy</a>
+    <a href="#">Cookie Settings</a>
+    <a href="#">Cookie Policy</a>
+    <a href="#">Legal</a>
+    <a href="#">Do Not Sell or Share My Personal Information</a>
+  </div>
+
+  <!-- Rating Section -->
+  <div class="footer-rating">
+    <img src="ESRB_2013_Mature.svg.webp" alt="ESRB Mature 17+" class="esrb-logo">
+    <div class="rating-text">
+      <p>Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content, Use of Drugs and Alcohol.</p>
+      <p class="in-game-purchases">In-Game Purchases.</p>
+    </div>
+  </div>
+
+</footer>
+
+</body>
 </html>
