@@ -417,3 +417,86 @@ body {
   letter-spacing: 0.5px;
   cursor: pointer;
 }
+
+/* Alt Layout Classes */
+.alt-layout .char-header {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.char-bento-grid.reverse {
+  grid-template-columns: 1.25fr 1.05fr;
+}
+
+.char-bento-grid.reverse .bento-portrait { order: 2; }
+.char-bento-grid.reverse .bento-column { order: 1; }
+
+/* Scroll-Scrub Engine (Matches source exactly) */
+.scroll-canvas-section {
+  height: 250vh; 
+  position: relative;
+  background-color: #000;
+}
+
+.sticky-canvas-container {
+  position: sticky;
+  top: 0;
+  height: 100vh; 
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-canvas-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh; 
+  background: linear-gradient(to bottom, rgba(22, 23, 42, 0) 0%, rgba(22, 23, 42, 1) 100%);
+  pointer-events: none; 
+  z-index: 5;
+}
+
+#scrub-canvas {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; 
+  display: block;
+  object-position: center center;
+}
+
+/* Overlay Text inside canvas */
+.interlude-overlay-text {
+  position: absolute;
+  z-index: 6;
+  text-align: center;
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+.interlude-eyebrow {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #95eef1;
+  margin-bottom: 12px;
+}
+
+.interlude-heading {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(48px, 8vw, 110px);
+  font-weight: 900;
+  color: #df698a;
+  margin-bottom: 16px;
+}
+
+.interlude-sub {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(22px, 3vw, 42px);
+  color: #f7bda6;
+}

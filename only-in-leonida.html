@@ -142,6 +142,142 @@
       </div>
     </section>
 
+    <!-- 2. LUCIA CAMINOS -->
+     
+    <section id="lucia-caminos" class="character-section theme-yellow alt-layout">
+      <div class="character-container">
+        
+        <div class="char-header">
+          <span class="char-index">02 / PROTAGONIST</span>
+          <h2 class="char-name">LUCIA CAMINOS</h2>
+          <p class="char-tagline">Lucia's father taught her to fight as soon as she could walk.</p>
+        </div>
+
+        <div class="char-bento-grid reverse">
+          <!-- Main Portrait Card -->
+          <div class="bento-card bento-portrait">
+            <img src="Jason_and_Lucia_02_portrait.jpg" alt="Lucia Caminos">
+            <div class="bento-overlay-quote">
+              <blockquote>“The only thing that matters is who you know and what you got.”</blockquote>
+            </div>
+          </div>
+
+          <!-- Bio & Secondary Media Column -->
+          <div class="bento-column">
+            <div class="bento-card bento-bio">
+              <p class="bio-primary">
+                Life has been coming at her swinging ever since. Fighting for her family landed her in the Leonida Penitentiary. Sheer luck got her out. Lucia's learned her lesson — only smart moves from here.
+              </p>
+              <p class="bio-secondary">
+                More than anything, Lucia wants the good life her mom has dreamed of since their days in Liberty City — but instead of half-baked fantasies, Lucia is prepared to take matters into her own hands.
+              </p>
+              <div class="quote-callout">
+                <span class="quote-mark">“</span>
+                <p>A life with Jason could be her way out.</p>
+              </div>
+              <p class="bio-secondary">
+                Fresh out of prison and ready to change the odds in her favor, Lucia's committed to her plan — no matter what it takes.
+              </p>
+            </div>
+
+            <div class="bento-card bento-landscape">
+              <img src="Jason_and_Lucia_Beach_landscape.jpg" alt="Lucia Caminos and Jason">
+              <button class="rewatch-btn" data-character="Lucia Caminos" data-quote="The only thing that matters is who you know and what you got." data-video="https://www.youtube.com/embed/rz1B4B2yBZY">
+                <svg viewBox="0 0 40 40" width="28" height="28" fill="currentColor">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM16.8988 14.426C16.7193 14.3106 16.4911 14.3024 16.3038 14.4047C16.1165 14.5069 16 14.7033 16 14.9167V25.4167C16 25.6301 16.1165 25.8264 16.3038 25.9287C16.4911 26.0309 16.7193 26.0227 16.8988 25.9074L25.0654 20.6574C25.2324 20.55 25.3333 20.3652 25.3333 20.1667C25.3333 19.9682 25.2324 19.7833 25.0654 19.676L16.8988 14.426Z"/>
+                </svg>
+                <span>Rewatch Video</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  
+         <!-- SCROLL-SCRUB CANVAS -->
+     
+    <div class="scroll-canvas-section leonida-canvas-break">
+      <div class="sticky-canvas-container">
+        <canvas id="scrub-canvas"></canvas>
+        <div class="interlude-overlay-text">
+          <p class="interlude-eyebrow">WELCOME TO THE SUNSHINE STATE</p>
+          <h2 class="interlude-heading">Only in Leonida</h2>
+          <p class="interlude-sub">Home to the neon-soaked streets of Vice City and beyond.</p>
+        </div>
+      </div>
+    </div>
+
 </main>
 </body>
+<script>
+
+// ONLY IN LEONIDA - INTERACTIVE SCRIPTS & SCROLL-SCRUB ENGINE
+
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // 1. REUSABLE SCROLL-SCRUB CANVAS SETUP
+  const setupCanvas = (sectionSel, canvasId, frameCount, getPath) => {
+    const section = document.querySelector(sectionSel);
+    const canvas = document.getElementById(canvasId);
+    if (!canvas || !section) return null;
+    
+    const ctx = canvas.getContext('2d');
+    const imgs = Array.from({ length: frameCount }, (_, i) => {
+      const img = new Image();
+      img.src = getPath(i + 1);
+      return img;
+    });
+
+    imgs[0].onload = () => {
+      canvas.width = imgs[0].width;
+      canvas.height = imgs[0].height;
+      ctx.drawImage(imgs[0], 0, 0, canvas.width, canvas.height);
+    };
+
+    return { section, canvas, ctx, imgs, frameCount };
+  };
+
+  const canvases = [
+    setupCanvas('.scroll-canvas-section', 'scrub-canvas', 30, i => `frames/frame_${String(i).padStart(3, '0')}.jpg`),
+    setupCanvas('.scroll-canvas-section-2', 'scrub-canvas-2', 35, i => `frames2/frame_${String(i).padStart(3, '0')} (1).jpg`)
+  ].filter(Boolean);
+
+  // 2. ORIGINAL SCROLL LISTENER (No throttling, exact original math)
+  const chapterPills = document.querySelectorAll('.chapter-pill');
+  const trackedSections = Array.from(chapterPills).map(pill => {
+    const targetId = pill.getAttribute('href').replace('#', '');
+    return { pill, section: document.getElementById(targetId) };
+  }).filter(item => item.section);
+
+  window.addEventListener('scroll', () => {
+    const sy = window.scrollY;
+
+    // Canvas Scrubbing
+    canvases.forEach(({ section, canvas, ctx, imgs, frameCount }) => {
+      const rect = section.getBoundingClientRect();
+      const scrollP = Math.max(0, Math.min(-rect.top / (section.offsetHeight - window.innerHeight), 1));
+      const frame = Math.min(frameCount - 1, Math.floor(scrollP * frameCount));
+      
+      if (imgs[frame]) {
+        requestAnimationFrame(() => ctx.drawImage(imgs[frame], 0, 0, canvas.width, canvas.height));
+      }
+    });
+
+    // Update Active Sticky Chapter Pill
+    const scrollMid = sy + window.innerHeight * 0.35;
+    let currentMatch = trackedSections[0];
+    for (const item of trackedSections) {
+      if (item.section.offsetTop <= scrollMid) {
+        currentMatch = item;
+      }
+    }
+    if (currentMatch) {
+      chapterPills.forEach(p => p.classList.remove('active'));
+      currentMatch.pill.classList.add('active');
+    }
+  });
+});
+</script>
 </html>
