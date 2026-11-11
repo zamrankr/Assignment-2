@@ -500,3 +500,233 @@ body {
   font-size: clamp(22px, 3vw, 42px);
   color: #f7bda6;
 }
+
+/* Destination Inline Banner */
+.destination-inline-banner {
+  border-radius: 36px;
+  padding: 36px 42px;
+  background: linear-gradient(135deg, rgba(223, 105, 138, 0.22) 0%, rgba(149, 238, 241, 0.12) 100%);
+  border: 1px solid rgba(255, 192, 209, 0.28);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.dest-banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dest-eyebrow {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #95eef1;
+}
+
+.dest-banner-info h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 900;
+  color: #fff9cb;
+  letter-spacing: 1px;
+}
+
+.dest-banner-info p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(15px, 1.5vw, 17px);
+  color: #d8daec;
+}
+
+.dest-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 28px;
+  background: #FFC0D1;
+  color: #16172A;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* Scroll Canvas 2 Styles (Matches source exactly) */
+.scroll-canvas-section-2 {
+  height: 400vh; 
+  position: relative;
+  background-color: #000;
+}
+
+.sticky-canvas-container-2 {
+  position: sticky;
+  top: 0;
+  height: 100vh; 
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-canvas-container-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh; 
+  background: linear-gradient(to bottom, rgba(22, 23, 42, 1) 0%, rgba(22, 23, 42, 0) 100%);
+  pointer-events: none; 
+  z-index: 5;
+}
+
+.sticky-canvas-container-2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh; 
+  background: linear-gradient(to bottom, rgba(22, 23, 42, 0) 0%, rgba(22, 23, 42, 1) 100%);
+  pointer-events: none; 
+  z-index: 5;
+}
+
+#scrub-canvas-2 {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; 
+  object-position: center center; 
+  display: block;
+}
+
+/* Interactive Destinations Showcase */
+.destinations-showcase {
+  padding: 90px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.destinations-container {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.destinations-header {
+  text-align: center;
+  max-width: 820px;
+}
+
+.destinations-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(34px, 6vw, 84px);
+  font-weight: 900;
+  color: #fff9cb;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.destinations-subtitle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(18px, 2.4vw, 30px);
+  color: #f7bda6;
+}
+
+.dest-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.dest-tab {
+  padding: 16px 26px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dest-tab.active {
+  background: #fff9cb;
+  color: #16172A;
+  border-color: #fff9cb;
+}
+
+.dest-stage {
+  width: 100%;
+  position: relative;
+}
+
+.dest-card {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 620px;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+}
+
+.dest-card.active {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dest-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dest-card-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px;
+  background: linear-gradient(to top, rgba(22, 23, 42, 0.96) 0%, rgba(22, 23, 42, 0.65) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dest-badge {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #95eef1;
+}
+
+.dest-card-overlay h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 900;
+  color: #fff9cb;
+}
+
+.dest-card-overlay p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(16px, 2.2vw, 26px);
+  color: #ffffff;
+  max-width: 820px;
+  line-height: 1.45;
+}
