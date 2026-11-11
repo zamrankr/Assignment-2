@@ -916,12 +916,6 @@
     transform: scale(1.06);
 }
 
-/* Keyboard accessibility */
-.menu-toggle:focus-visible + .menu-button {
-    outline: 2px solid #ffc0d1;
-    outline-offset: 5px;
-}
-
 @media (max-width: 600px) {
     .menu-button {
         top: 20px;
@@ -997,4 +991,4 @@ img, svg, canvas, video, iframe {max-width: 100%;} body:has(.menu-toggle:checked
 /* Touch Reset */
 @media (hover: none) {
   .order-button:hover, .promo-content button:hover {color: #1617}
-}
+} 

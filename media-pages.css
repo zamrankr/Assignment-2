@@ -139,7 +139,7 @@
     font-size: 10px;
     letter-spacing: 2px;
     font-weight: 700;
-    transition: background .2s, color .2s
+    transition: background 0.2s, color 0.2s
 }
 
 .outline-cta:hover {
