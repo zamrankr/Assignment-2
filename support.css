@@ -1,0 +1,652 @@
+/* =========================================================================
+   SUPPORT PAGE STYLES (Matches Rockstar Support Layout & Leonida Theme)
+   ========================================================================= */
+
+.support-body {
+  background-color: #0b0c16; 
+}
+
+/* Optional header nav links specific to support */
+.support-mini-nav {
+  display: flex;
+  gap: 24px;
+  margin-right: 16px;
+}
+
+.support-mini-nav a {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #7b7d99;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.support-mini-nav a:hover {
+  color: #ffffff;
+}
+
+/* Main Container */
+.support-main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Announcement Slider */
+.support-announcement {
+  width: 100%;
+  background: rgba(30, 32, 58, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+  color: #d8daec;
+}
+
+.announce-badge {
+  background: #FFC0D1;
+  color: #16172A;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.announcement-content a {
+  color: #95eef1;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.announcement-content a:hover {
+  text-decoration: underline;
+}
+
+/* Search Hero */
+.support-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.support-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px 20px;
+  align-items: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.search-container:focus-within {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFC0D1;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #7b7d99;
+  margin-right: 12px;
+}
+
+.support-search {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+}
+
+.support-search::placeholder {
+  color: #7b7d99;
+}
+
+/* Solutions Grid */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.solution-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #16172A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-4px);
+  border-color: #FFC0D1;
+  background: rgba(30, 32, 58, 0.8);
+}
+
+.solution-icon {
+  width: 40px;
+  height: 40px;
+  color: #fff9cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.solution-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.solution-game {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+  color: #7b7d99;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.solution-card h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Browse Articles Section */
+.browse-articles-section {
+  width: 100%;
+}
+
+.browse-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.browse-header h2 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.view-all-link {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: #95eef1;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+/* Article Tabs */
+.article-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.article-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #7b7d99;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 24px;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #ffffff;
+}
+
+.tab-btn.active {
+  color: #ffffff;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFC0D1;
+}
+
+.tab-content {
+  position: relative;
+  min-height: 200px;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.article-list li:last-child {
+  border-bottom: none;
+}
+
+.article-list a {
+  display: block;
+  padding: 20px 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  color: #d8daec;
+  text-decoration: none;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.article-list a:hover {
+  background: rgba(255, 255, 255, 0.03);
+  padding-left: 24px;
+  color: #ffffff;
+}
+
+/* FAQ Accordion Section */
+.support-section {
+  width: 100%;
+}
+
+.section-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: rgba(30, 32, 58, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item.active {
+  border-color: #95eef1;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 24px 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-icon {
+  font-size: 28px;
+  color: #FFC0D1;
+  font-weight: normal;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  padding: 0 30px;
+  opacity: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  color: #c4c6dd;
+  line-height: 1.6;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 30px 30px;
+  opacity: 1;
+}
+
+/* =========================================================================
+   CONTACT SECTION (Leonida Bento Layout)
+   ========================================================================= */
+
+.contact-section {
+  margin-top: 20px;
+}
+
+.contact-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* Left Column: Info Card */
+.contact-info-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 500px;
+  background: rgba(30, 32, 58, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.contact-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6) saturate(1.2);
+  z-index: 1;
+}
+
+.contact-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(22, 23, 42, 0.98) 0%, rgba(22, 23, 42, 0.7) 60%, transparent 100%);
+  z-index: 2;
+}
+
+.contact-info-content {
+  position: relative;
+  z-index: 3;
+  padding: 40px;
+}
+
+.cyan-text {
+  color: #95eef1;
+  margin-bottom: 12px;
+  display: block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contact-heading {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  color: #fff9cb;
+  line-height: 1;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.contact-desc {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  color: #d8daec;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
+}
+
+.method-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+}
+
+.method-label {
+  color: #7b7d99;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.method-link {
+  color: #FFC0D1;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.method-link:hover {
+  color: #ffffff;
+}
+
+.white-text {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Right Column: Form Card */
+.contact-form-card {
+  background: rgba(30, 32, 58, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-header .form-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.form-header p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: #7b7d99;
+}
+
+/* Form */
+.leonida-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #d8daec;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.leonida-form input,
+.leonida-form select,
+.leonida-form textarea {
+  width: 100%;
+  background: rgba(22, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leonida-form input:focus,
+.leonida-form select:focus,
+.leonida-form textarea:focus {
+  outline: none;
+  border-color: #95eef1;
+  background: rgba(22, 23, 42, 0.9);
+  box-shadow: 0 0 15px rgba(149, 238, 241, 0.15);
+}
+
+.leonida-form select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.leonida-form textarea {
+  resize: vertical;
+}
+
+.leonida-form .submit-ticket-btn {
+  margin-top: 10px;
+  width: 100%;
+  background: #FFC0D1;
+  color: #16172A;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 36px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leonida-form .submit-ticket-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 192, 209, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 950px) {
+  .support-mini-nav { display: none; }
+  
+  .support-main {
+    padding-top: 100px;
+    gap: 40px;
+  }
+  
+  .announcement-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .contact-info-content {
+    padding: 30px 20px;
+  }
+  
+  .contact-form-card {
+    padding: 30px 20px;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    padding: 20px;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 300px;
+  }
+}
